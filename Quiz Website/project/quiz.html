@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuizMaster | Take the Quiz</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+  </div>
+  
+  <header class="quiz-header">
+    <div class="logo-container small">
+      <div class="logo">Q</div>
+      <h1 class="logo-text">QuizMaster</h1>
+    </div>
+    <div class="quiz-info">
+      <div class="timer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span id="time-left">60s</span>
+      </div>
+      <div class="progress-text">Question <span id="current-question">1</span> of <span id="total-questions">10</span></div>
+    </div>
+  </header>
+  
+  <main class="quiz-container">
+    <div id="quiz-card" class="quiz-card">
+      <div class="progress-bar-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <div id="question-container" class="question-container">
+        <h2 id="question-text" class="question-text">What is the capital of France?</h2>
+        
+        <div id="options-container" class="options-container">
+          <!-- Options will be populated by JavaScript -->
+        </div>
+      </div>
+      
+      <div class="quiz-navigation">
+        <button id="prev-button" class="nav-button prev-button" disabled>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Previous</span>
+        </button>
+        <button id="next-button" class="nav-button next-button">
+          <span>Next</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div id="results-card" class="results-card hidden">
+      <h2 class="results-title">Quiz Completed!</h2>
+      <div class="score-container">
+        <div class="score-circle">
+          <span id="score-percentage">85%</span>
+        </div>
+        <p class="score-text">You scored <span id="correct-answers">8</span> out of <span id="total-answers">10</span> questions correctly.</p>
+      </div>
+      <div class="results-message" id="results-message">
+        Great job! You have a solid understanding of the subject.
+      </div>
+      <div class="results-actions">
+        <button id="retry-quiz" class="retry-button">Try Again</button>
+        <button id="back-to-home" class="home-button">Back to Home</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/questions.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
